@@ -1,0 +1,21 @@
+import java.util.Arrays;
+import java.util.ArrayList;
+public class WhichAreIn { 
+	
+	public static String[] inArray(String[] array1, String[] array2) {
+     ArrayList<String> list = new ArrayList<String>();
+     
+     for(int i = 0; i < array1.length; i++){
+        String working = array1[i];
+        for(int cnt = 0; cnt < array2.length; cnt++)
+          if(array2[cnt].indexOf(working) != -1){
+            list.add(working);
+            break;
+          }
+     }
+     
+     String[] r = list.toArray(new String[list.size()]);
+     Arrays.sort(r);
+		 return r;
+	}
+}
